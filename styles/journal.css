@@ -1,0 +1,27 @@
+html {
+    background: url("https://ocdn.eu/pulscms-transforms/1/ZsXk9ktTURBXy80MTliZDAwMS0wZTYwLTQzNjEtYmNhMS0zYTYwOGMwNGMxMjUucG5nkpUCzQMUAMLDlQIAzQL4wsOBoTAB") no-repeat center fixed; 
+    background-size: cover;
+    opacity: 90% ;
+   }
+h1 {
+    color: black;
+    font-weight: bold;
+    font-style: initial;
+    font-size: 150px;
+    font-family: inherit;
+    text-align: center;
+}
+form {
+    color: blueviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+}
+fieldset {
+    background-color:aliceblue;
+    opacity: 90%;
+    flex: inherit;
+    display: flex;
+    flex-direction: column;
+}
