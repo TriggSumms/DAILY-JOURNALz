@@ -5,26 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="journal.css">
+
 </head>
 <body>
     <h1><strong>Daily Journal</strong></h1>
-   <form action="">
-       <fieldset>
-           <label for="journalDate">Date of Entry</label>
-           <input type="date" name="journalDate" id="journalDate">
-       </fieldset>
-       <fieldset>
+<form>
+ <!--  
+<fieldset>
         <label for="journalDate">Date of Entry</label>
         <input type="date" name="journalDate" id="journalDate">
     </fieldset>
     <fieldset>
-        <label for="journalDate">Date of Entry</label>
-        <input type="date" name="journalDate" id="journalDate">
-    </fieldset>
-    <fieldset>
-        <label for="journalDate">Date of Entry</label>
-        <input type="date" name="journalDate" id="journalDate">
-    </fieldset>
-   </form> 
+     <label for="coveredConcepts">Concepts Covered</label>
+     <input type= "form" name="coveredConcepts" id="coveredConcepts">
+ </fieldset>
+ <fieldset> 
+         <label for="journalEntry">Journal Entry</label>
+         <textarea id="journalEntry" rows="1.5" cols="75">
+         Please share ya feels...
+         </textarea>     
+ </fieldset>
+ <fieldset>
+     <label for="moodRing">MoOd of the Day</label>
+ <select name="moodRing" id="moodRing">
+     <option value="mush">MushBrains</option>
+     <option value="tPAIN turnt">"Tpain Turnt"</option>
+     <option value="Noodlin">Noodlin</option>
+     <option value="TokyoDrift">Im Tokyo Drifting Brother</option>
+ </select>
+ </fieldset>
+ -->
+</form> 
+<input type="button" onclick="alert('Ya broke the gosh dang computer, ya dingus')" value="Click ta Record ya Entry!">
+</body>
+<!-- Need to write container rules for showing off said transferred user entries -->
+</article>
+<article class="entryLog">
+
+</article>
+<script src="scripts/entry/data.js"></script>
+<script src="scripts/entry/entryComponent.js"></script>
+<script src="scripts/entry/entryList.js"></script>
+
+<script src="scripts/journal.js"></script>
+
 </body>
 </html>

@@ -25,3 +25,10 @@ fieldset {
     display: flex;
     flex-direction: column;
 }
+.entryLog{
+    color: blueviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+}
