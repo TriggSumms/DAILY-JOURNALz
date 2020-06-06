@@ -1,6 +1,8 @@
-const entryConverter = (entryObject) => {
 
-    const entryHTMLRepresentation = `<form action="">
+/*CODE that doesnt work but might later...
+
+
+`<form action="">
     <fieldset>
         <label for="${entryObject.date}">Date of Entry</label>
         <input type="date" name="${entryObject.date}" id="${entryObject.date}">
@@ -24,7 +26,4 @@ const entryConverter = (entryObject) => {
      <option value="TokyoDrift">Im Tokyo Drifting Brother</option>
  </select>
  </fieldset>`
-
-return entryHTMLRepresentation
-
-}
+ */

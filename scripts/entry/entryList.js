@@ -1,4 +1,23 @@
-const entryList = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Possible Use later
+
+const renderJournalEntries = () => {
     // Iterate the collection of fish objects
     for (const currentEntryObject of entryCollection) {
 
@@ -6,9 +25,10 @@ const entryList = () => {
         const entryHTML = entryConverter(currentEntryObject)
 
         // Find the <section> element in index.html
-        const entryArticleElement = document.querySelector(".entryList")
+        const triggElement = document.querySelector(".entryLog")
 
         // Put the fish HTML representation inside the <article> element
-        entryArticleElement.innerHTML += entryHTML
+        triggElement.innerHTML += entryHTML
     }
 }
+renderJournalEntries();*/

@@ -32,3 +32,12 @@ fieldset {
     display: flex;
     flex-direction: column;
 }
+h2
+    {
+        color: black;
+        font-weight: bold;
+        font-style: initial;
+        font-size: 30px;
+        font-family: inherit;
+        
+    }

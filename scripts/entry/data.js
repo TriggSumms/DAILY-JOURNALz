@@ -1,10 +1,21 @@
 
 
+ 
+
+
+
+
+
+
+
+
+
+
+
+/*   I have no idea yet, how to make this work
 let entryCollection = [
  ]
-
-
-
+ 
  const getEntryData = () => {
      return fetch("http://localhost:8088/entryCollection").then(
          (triggResponse) => {
@@ -18,3 +29,6 @@ let entryCollection = [
              }
          )
  }
+ 
+ 
+ */
