@@ -1,22 +1,21 @@
-let entryCollection = [
-
-
-]
-
 // Pulls the info from my database to put in the above array
 const getEntryData = () => {
-    return fetch("http://localhost:8088/entryCollection").then(
+    return fetch("http://localhost:3000/entryCollection").then(
         (triggResponse) => {
             return triggResponse.json()
         }
     )
         .then(
-            (arrayOfEntry) => {
+            (entries) => {
                 // 100 percent sure the data is back
-                entryCollection = arrayOfEntry
+                entryCollection = entries
             }
         )
 }
+getEntryData()
+
+
+/* 
 
 // Converts the info into HTML
 
@@ -53,13 +52,17 @@ const renderJournalEntries = () => {
         const entryHTML = entryConverter(currentEntryObject)
 
         // Find the <section> element in index.html
-        const triggElement = document.querySelector(".entryLog")
+        const fieldsetElement = document.querySelector(".entryLog")
 
         // Put the fish HTML representation inside the <article> element
-        triggElement.innerHTML += entryHTML
+        fieldsetElement.innerHTML += entryHTML
     }
 }
 
 
 // INVOKE
 renderJournalEntries();
+
+
+
+*/
