@@ -1,20 +1,20 @@
 
 //New method for creating objects containg functions for pass through import/export statements (ES6 Module)
-//Should put the string in the DOM, will need to import data and the string and then export the objects functions
+//Should put the string in the DOM, will need to import data and the string and then export the objects functions (API is imported for use of "journal entries" inside)
 
 
 import API from "./data.js";
 import entryHTMLRepresentation from "./entryComponent,js";
 
 
-const entriesDOM = {
+let entriesDOM = {
 renderJournalEntries (currentEntryObject) {
     for(currentEntryObject of API.journalEntries){
               // Convert the entry object HTML representation
               const entryHTML = entryHTMLRepresentation.entryConverter(currentEntryObject);
 
               // Find the Trigg element in index.html to store information
-              const triggElement = document.querySelector(".entryLog");
+              const triggElement = document.querySelector('.entryLog');
       
               //Now the converters info is being shoved into that entryHTML
               triggElement.innerHTML += entryHTML;  

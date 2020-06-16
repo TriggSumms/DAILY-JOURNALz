@@ -8,6 +8,8 @@
 
 
 
+//Maybe add the CLICKEVENT HERE
+
 
 
 
@@ -21,6 +23,14 @@ data.getNumberTrivia()
 .then(triviaResponse => dom.printToDom(triviaResponse));
 ------------------------------------------------------------------------
  */
+
+
+
+
+
+
+
+
 
 
 
