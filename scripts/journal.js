@@ -38,7 +38,23 @@
       // Once you have collected all the values, update the DOM
       // with some HTML
   })
+
+
+
+
+  
   //Now I need too create the logic for the window (if/else?) and invoke the functions
+
+
+
+
+
+
+
+
+
+
+
 
 
 
