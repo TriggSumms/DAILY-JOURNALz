@@ -3,15 +3,15 @@
 //Should put the string in the DOM, will need to import data and the string and then export the objects functions (API is imported for use of "journal entries" inside)
 
 
-import API from "./data.js";
-import entryHTMLRepresentation from "./entryComponent,js";
+import API from './data.js';
+import entryHTMLRepresentation from './entryComponent.js';
 
 
 let entriesDOM = {
-renderJournalEntries (currentEntryObject) {
-    for(currentEntryObject of API.journalEntries){
+renderJournalEntries (interiorEntryObject) {
+    for(interiorEntryObject of API.journalEntries){
               // Convert the entry object HTML representation
-              const entryHTML = entryHTMLRepresentation.entryConverter(currentEntryObject);
+              const entryHTML = entryHTMLRepresentation.entryConverter(interiorEntryObject);
 
               // Find the Trigg element in index.html to store information
               const triggElement = document.querySelector('.entryLog');

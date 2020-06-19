@@ -30,7 +30,7 @@ return entryHTMLRepresentation
 //New method for creating objects containg functions for pass through import/export statements (ES6 Module)
 //Now I need to create an object to export to the string converter
 
-//I AM UNABLE TO GET MY INFO TO POPULATE
+
 const entryHTMLRepresentation = {
     entryConverter(entryObject)
  {
