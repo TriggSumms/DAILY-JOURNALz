@@ -1,34 +1,5 @@
-/* import getEntryData from "../journal";
+ import entriesDOM from "./entryList.js";
 
-export default getEntryData;
- 
- */
-
-
- 
-
-
-/*  const getEntryData = () => {
-     return fetch(" http://localhost:3000/entries").then(
-         (triggResponse) => {
-             return triggResponse.json()
-         }
-     )
-         .then(
-             (arrayOfEntry) => {
-                 // 100 percent sure the data is back
-                 entryCollection = arrayOfEntry;
-             }
-         )
- }
- getEntryData()
-  */
-
-//New method for creating objects containg functions for pass through import/export statements (ES6 Module)
-//created a function outta journal entries so that it can be passed
-
-
-//import entryObj from './createEntry.js';
 
 const url = "http://localhost:3000/entries"
 
@@ -36,10 +7,12 @@ const API = {
     journalEntries : [], 
     getJournalEntries () {
         return fetch("http://localhost:3000/entries")
-            .then(response => response.json());
-
+            .then(response => response.json()).then((journalEntriesArray)=> {
+                API.journalEntries= journalEntriesArray;
+            })
+//Dropping that second ".then(journalEntriesArray) allowed me to post my current database"
      },
-
+//Bel
     addEntry: (createdEntry) => {
     return fetch("http://localhost:3000/entries", {
         method: "POST",
@@ -47,12 +20,14 @@ const API = {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(createdEntry)
-  //  }).then(response => response.json());
+ 
+    //Went through this step with Tyler and Im still trying to wrap my head around it. I guess were invoking the response so that it works with the renderJournalEntries to clear lists?
+    }) .then(() => API.getJournalEntries()).then((response)=>{
     
+        entriesDOM.renderJournalEntries(response) 
     })
 }}
 
 
 export default API;
-
 //you have to export the object (API) so that it gets to main.js....."Default is for one object and {a,b} are for more than one object"

@@ -8,8 +8,11 @@ import entryHTMLRepresentation from './entryComponent.js';
 
 
 let entriesDOM = {
+  //Having to target the entryLog to clear the list with every entry...*before the for of loop
 renderJournalEntries (interiorEntryObject) {
-    for(interiorEntryObject of API.journalEntries){
+  let entryHTMLTrigg= document.querySelector(".entryLog")
+  entryHTMLTrigg.innerHTML= ""
+  for(interiorEntryObject of API.journalEntries){
               // Convert the entry object HTML representation
               const entryHTML = entryHTMLRepresentation.entryConverter(interiorEntryObject);
 

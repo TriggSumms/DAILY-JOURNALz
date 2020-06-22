@@ -1,6 +1,6 @@
-let createdEntry = (concepts, date, mood, entry) => {
+let createdEntry = (concept, date, mood, entry) => {
 	const entryObjectParam = {
-		concepts: concepts,
+		concept: concept,
         date: date,
         mood: mood,
         entry: entry
