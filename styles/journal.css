@@ -43,15 +43,37 @@ h2 {
         
     }
 
+
+ /* button styling */
 .RadioSelectionContainer {
     background-color: cornflowerblue;
     font-size: 20px;
     border-radius: 20px;
     color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
+
+
+  button,
+  legend {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 0;
+    border: 0;
+    font-size: 14px;
+  }
+  
+  button:hover,
+  button:focus {
+    color: #999;
+  }
+  
+  button:active {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+  }

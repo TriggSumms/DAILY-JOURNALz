@@ -20,7 +20,7 @@ I am feeling: "${entryObject.mood}"
 <div>
 What I learned: "${entryObject.entry}"
 <button id="editEntry--${entryObject.id}">Edit</button>
-<button id="deleteSEntry--${entryObject.id}">Delete</button>
+<button id="deleteEntry--${entryObject.id}">Delete</button>
 </div>
 </article>
     `

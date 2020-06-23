@@ -12,6 +12,7 @@ let entriesDOM = {
 renderJournalEntries (interiorEntryObject) {
   let entryHTMLTrigg= document.querySelector(".entryLog")
   entryHTMLTrigg.innerHTML= ""
+  
   for(interiorEntryObject of API.journalEntries){
               // Convert the entry object HTML representation
               const entryHTML = entryHTMLRepresentation.entryConverter(interiorEntryObject);
@@ -23,6 +24,14 @@ renderJournalEntries (interiorEntryObject) {
               triggElement.innerHTML += entryHTML;  
     }
 }
+
+ 
+//Create container and then invoke the function
+//const entryLog = document.querySelector("#entryLog");
+//const makeEntryList = () => {
+	//		return entry === 1;})
+
+ 
 }
 
 export default entriesDOM;

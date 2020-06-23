@@ -19,3 +19,4 @@ Corrected the fetch call so my backlog of entries posts but Im still working on 
 
 6/22
 I am so behind.....however I am now posting and moving onward to radio buttons. Should have it completted tonight
+TONIGHT=====>Ive learned to hate and love myself. I am now console.loging via the DeleteListener but still unable to delete. Look through your comments in the morning*

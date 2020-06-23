@@ -10,9 +10,8 @@ const API = {
             .then(response => response.json()).then((journalEntriesArray)=> {
                 API.journalEntries= journalEntriesArray;
             })
-//Dropping that second ".then(journalEntriesArray) allowed me to post my current database"
-     },
-//Bel
+},
+//Added Entries, Went through this step with Tyler and Im still trying to wrap my head around it. I guess were invoking the response so that it works with the renderJournalEntries to clear lists?
     addEntry: (createdEntry) => {
     return fetch("http://localhost:3000/entries", {
         method: "POST",
@@ -21,12 +20,26 @@ const API = {
         },
         body: JSON.stringify(createdEntry)
  
-    //Went through this step with Tyler and Im still trying to wrap my head around it. I guess were invoking the response so that it works with the renderJournalEntries to clear lists?
+
     }) .then(() => API.getJournalEntries()).then((response)=>{
     
         entriesDOM.renderJournalEntries(response) 
     })
-}}
+},
+
+//Trying my hand at the delete properties, not sure if I should pass the createdEntry or the "id"
+	deleteEntry: (createdEntry) => {
+		return fetch(`${url}/entries/${createdEntry}`, {
+			method: "DELETE"
+	}).then(() => API.getJournalEntries()).then((response)=>{
+    
+            entriesDOM.renderJournalEntries(response) 
+    })}
+    //Gotta add back all of the entries? Such in the recipes example?
+
+}
+
+
 
 
 export default API;
