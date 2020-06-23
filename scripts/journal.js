@@ -1,68 +1,46 @@
-// Pulls the info from my database to put in the above array
-const getEntryData = () => {
-    return fetch("http://localhost:3000/entryCollection").then(
-        (triggResponse) => {
-            return triggResponse.json()
-        }
-    )
-        .then(
-            (entries) => {
-                // 100 percent sure the data is back
-                entryCollection = entries
-            }
-        )
-}
-getEntryData()
+ //New method for creating objects containg functions for pass through import/export statements (ES6 Module)
+ import API from './entry/data.js';
+ import entriesDOM from './entry/entryList.js';
+ import createdEntry from './entry/createEntry.js';
+ import registerDeleteListener from './entry/events.js';
+ 
+//Maybe dont use the const to hold the invoke?
+ //const allEntries = () => {
+    API.getJournalEntries()
+    .then(()=> entriesDOM.renderJournalEntries()); 
+ 
+//I guess I could delete entry container?
+  const entryContainer = 
+  document.querySelector(".entryLog")
+  document.querySelector("#saveEntry")
+  .addEventListener("click", event => { 
+      /*
+          Collect the user put by selecting the input fields, one
+          at a time, and accessing the `value` property
+      */
 
+      let concept = document.querySelector("#concept").value;
+      let date = document.querySelector("#date").value;
+      let mood = document.querySelector("#mood").value;
+      let entry = document.querySelector("#entry").value;
 
-/* 
+//6/22---> This is almost working, it looks like part of my entries are being cut off or only the first part of the entry is being acceptted 
+//Lastly I am having issues with the ID value in my .json file.....might effect filtering later
 
-// Converts the info into HTML
+if (concept !== "" && date !== "" && mood !== "" && entry !== "")
+     { let createdGetEntry= createdEntry(concept, date, mood, entry)
+        API.addEntry(createdGetEntry)}
+  else { alert("Must complete all forms before recording your entry ya DINGUS!")}
 
-const entryConverter = (entryObject) => {
-
-            const entryHTMLRepresentation = `
-            <article class= "entryLog">
-        <h2>${entryObject.concepts} </h2>
-        <div>
-        Todays Date: ${entryObject.date}
-        </div>
-        <div>
-        I am feeling: ${entryObject.mood}
-        </div>
-        <div>
-        What I learned ${entryObject.entry}
-        </div>
-        </article>
-            `
-
-return entryHTMLRepresentation
-
-}
+})
 
 
 
-// Render all entries
+//Invoking the delete listener
+registerDeleteListener.registerDeleteListener();
 
-const renderJournalEntries = () => {
-    // Iterate the collection of fish objects
-    for (const currentEntryObject of entryCollection) {
+// Invoke the method that attaches the event listener
+//event.registerDeleteListener();
 
-        // Convert the current fish to its HTML representation
-        const entryHTML = entryConverter(currentEntryObject)
-
-        // Find the <section> element in index.html
-        const fieldsetElement = document.querySelector(".entryLog")
-
-        // Put the fish HTML representation inside the <article> element
-        fieldsetElement.innerHTML += entryHTML
-    }
-}
-
-
-// INVOKE
-renderJournalEntries();
-
-
-
-*/
+// Get all entries from API and render them in the DOM
+//API.getJournalEntries().then(renderJournalEntries);

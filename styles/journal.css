@@ -25,15 +25,16 @@ fieldset {
     display: flex;
     flex-direction: column;
 }
-.entryLog{
+.entryLog {
+    background-color: whitesmoke;
+    border-radius: 20px;
     color: blueviolet;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: medium;
     display: flex;
     flex-direction: column;
 }
-h2
-    {
+h2 {
         color: black;
         font-weight: bold;
         font-style: initial;
@@ -41,3 +42,38 @@ h2
         font-family: inherit;
         
     }
+
+
+ /* button styling */
+.RadioSelectionContainer {
+    background-color: cornflowerblue;
+    font-size: 20px;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+  button,
+  legend {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 0;
+    border: 0;
+    font-size: 14px;
+  }
+  
+  button:hover,
+  button:focus {
+    color: #999;
+  }
+  
+  button:active {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+  }
