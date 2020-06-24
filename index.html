@@ -1,79 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAILY JOURNAL</title>
     <link rel="stylesheet" href="styles/journal.css">
 </head>
+
 <body>
     <main>
-    <h1><strong>Daily Journal BOI</strong></h1>
-<form>
-<fieldset>
-        <label for="journalDate">Date of Entry</label>
-        <input type="date" name="journalDate" id="date">
-    </fieldset>
-    <fieldset>
-     <label for="coveredConcepts">Concepts Covered</label>
-     <input type= "form" name="coveredConcepts" id="concept">
- </fieldset>
- <fieldset> 
-         <label for="journalEntry">Journal Entry</label>
-         <textarea id="entry" rows="1.5" cols="75">
+        <h1><strong>Daily Journal BOI</strong></h1>
+
+        <form>        
+            <div id="entryLogContainer">
+           </div>
+            <section id="entryForm">
+                <form>
+                    <input type="hidden" id="hiddenEntryForm" value="" />
+                    ...
+        </form>
+            </section>
+            <fieldset>
+                <label for="journalDate">Date of Entry</label>
+                <input type="date" name="journalDate" id="date">
+            </fieldset>
+            <fieldset>
+                <label for="coveredConcepts">Concepts Covered</label>
+                <input type="form" name="coveredConcepts" id="concept">
+            </fieldset>
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <textarea id="entry" rows="1.5" cols="75">
          Please share ya feels...
-         </textarea>     
- </fieldset>
- <fieldset>
-     <label for="moodRing">MoOd of the Day</label>
- <select name="moodRing" id="mood">
-     <option value="mush">MushBrains</option>
-     <option value="tPAIN turnt">"Tpain Turnt"</option>
-     <option value="Noodlin">Noodlin</option>
-     <option value="TokyoDrift">Im Tokyo Drifting Brother</option>
- </select>
- </fieldset>
-</form> 
-<button id="saveEntry" type="button" value="">Put it on tha record</button>
-<button id="editEntry">Submit Entry Adjustments</button>
-       
-<!-- Where I have placed Radio Buttons for filtering of entries -->
-<form class= "RadioSelectionContainer">
+         </textarea>
+            </fieldset>
+            <fieldset>
+                <label for="moodRing">MoOd of the Day</label>
+                <select name="moodRing" id="mood">
+                    <option value="mush">MushBrains</option>
+                    <option value="tPAIN turnt">"Tpain Turnt"</option>
+                    <option value="Noodlin">Noodlin</option>
+                    <option value="TokyoDrift">Im Tokyo Drifting Brother</option>
+                </select>
+            </fieldset>
+        </form>
+        <button id="saveEntry" type="button" value="">Put it on tha record</button>
+        <button id="editEntry" type="button" value= "">Submit Entry Adjustments</button>
+
+        <!-- Where I have placed Radio Buttons for filtering of entries -->
+        <form class="RadioSelectionContainer">
             <p>Lets take a look at some of your moods via realtional grouping:</p>
             <div>
-            <input type="radio" id="mush"
-            name="mood" value="">
-            <label for="mush">"mush"</label>
-        
-            <input type="radio" id="tPAIN turnt"
-            name="mood" value="">
-            <label for="tPAIN turnt">"tPAIN turn't"</label>
-        
-            <input type="radio" id="Noodlin"
-            name="mood" value="">
-            <label for="Noodlin">"Noodlin"</label>
+                <input type="radio" id="mush" name="mood" value="">
+                <label for="mush">"mush"</label>
+
+                <input type="radio" id="tPAIN turnt" name="mood" value="">
+                <label for="tPAIN turnt">"tPAIN turn't"</label>
+
+                <input type="radio" id="Noodlin" name="mood" value="">
+                <label for="Noodlin">"Noodlin"</label>
             </div>
 
-            <input type="radio" id="TokyoDrift"
-            name="mood" value="">
+            <input type="radio" id="TokyoDrift" name="mood" value="">
             <label for="TokyoDrift'n">"TokyoDrift'n"</label>
             </div>
-        
+
             <div>
-            <button type="submit">Submit</button>
+                <button type="submit">Submit</button>
             </div>
-</form>
+        </form>
 
-<!-- Where I am containing my Entries  -->
-<article class="entryLog" id= "entryLog">
+        <!-- Where I am containing my Entries, can I have both class and ID? -->
+        <article class="entryLog" id="entryLog">
 
-</article>
+        </article>
 
 </body>
 <!-- <script src="scripts/entry/data.js"></script>
 <script src="scripts/entry/entryComponent.js"></script>
 <script src="scripts/entry/entryList.js"></script>  -->
-<script type= "module" src="scripts/journal.js"></script>
+<script type="module" src="scripts/journal.js"></script>
 </main>
 </body>
+
 </html>

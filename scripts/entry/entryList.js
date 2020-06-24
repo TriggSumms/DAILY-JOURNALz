@@ -24,19 +24,29 @@ renderJournalEntries (interiorEntryObject) {
               triggElement.innerHTML += entryHTML;  
     }
 }
-
- 
-//Create container and then invoke the function
-//const entryLog = document.querySelector("#entryLog");
-//const makeEntryList = () => {
-	//		return entry === 1;})
-
- 
 }
 
 export default entriesDOM;
 
 
+
+//},
+/*   
+//Making an entry List so that I can create ID's or an array to sort through
+ const makeEntryList = () => {
+	entryContainer.innerHTML = "";
+	API.getAllSweets()
+	.then((entryArray) => {
+		//can i get just the brownies?
+		const singleEntry = entryArray.filter( item => {
+			return item.entry === 1;
+    });
+  }},
+ entryArray.forEach(item => {
+    entryContainer.innerHTML += entryHTMLRepresentation(item);
+    
+  });
+  */
 
 
 

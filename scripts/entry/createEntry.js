@@ -3,7 +3,7 @@ let createdEntry = (concept, date, mood, entry) => {
 		concept: concept,
         date: date,
         mood: mood,
-        entry: entry
+		entry: entry
 	}
 
 	return entryObjectParam;

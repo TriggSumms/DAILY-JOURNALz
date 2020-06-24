@@ -11,17 +11,16 @@ const entryHTMLRepresentation = {
 
 <article class= "entryLog">
 <h2>${entryObject.concept} </h2>
+
+<p>Todays Date: ${entryObject.date}</p>
+
+<p> I am feeling: "${entryObject.mood}"</p>
+
 <div>
-Todays Date: ${entryObject.date}
-</div>
-<div>
-I am feeling: "${entryObject.mood}"
-</div>
-<div>
-What I learned: "${entryObject.entry}"
+ What I learned: "${entryObject.entry}"
 <button id="editEntry--${entryObject.id}">Edit</button>
 <button id="deleteEntry--${entryObject.id}">Delete</button>
-</div>
+<div>
 </article>
     `
 
@@ -33,38 +32,6 @@ export default entryHTMLRepresentation;
 
 
 
-
-
-
-
-
-
-
-
-
-// Converts the info into HTML
-/* const entryHTMLRepresentation ={}
-entryConverter = (entryObject) => {
-
-    const entryHTMLRepresentation = `
-<article class= "entryLog">
-<h2>${entryObject.concepts} </h2>
-<div>
-Todays Date: ${entryObject.date}
-</div>
-<div>
-I am feeling: ${entryObject.mood}
-</div>
-<div>
-What I learned ${entryObject.entry}
-</div>
-</article>
-    `
-
-return entryHTMLRepresentation
-
-}
- */
 
 
 

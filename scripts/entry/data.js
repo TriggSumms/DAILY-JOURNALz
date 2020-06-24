@@ -1,41 +1,54 @@
  import entriesDOM from "./entryList.js";
+ import createdEntry from "./createEntry.js";
 
 
-const url = "http://localhost:3000/entries"
+const url = "http://localhost:3000"
 
 const API = {
-    journalEntries : [], 
-    getJournalEntries () {
+    journalEntries: [],
+    getJournalEntries() {
         return fetch("http://localhost:3000/entries")
-            .then(response => response.json()).then((journalEntriesArray)=> {
-                API.journalEntries= journalEntriesArray;
+            .then(response => response.json()).then((journalEntriesArray) => {
+                API.journalEntries = journalEntriesArray;
             })
-},
-//Added Entries, Went through this step with Tyler and Im still trying to wrap my head around it. I guess were invoking the response so that it works with the renderJournalEntries to clear lists?
+    },
+    //Added Entries, Went through this step with Tyler and Im still trying to wrap my head around it. I guess were invoking the response so that it works with the renderJournalEntries to clear lists?
     addEntry: (createdEntry) => {
-    return fetch("http://localhost:3000/entries", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(createdEntry)
- 
+        return fetch("http://localhost:3000/entries", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(createdEntry)
+        }).then(() => API.getJournalEntries()).then((response) => {
 
-    }) .then(() => API.getJournalEntries()).then((response)=>{
-    
-        entriesDOM.renderJournalEntries(response) 
-    })
-},
+            entriesDOM.renderJournalEntries(response)
+        })
+    },
+    //Because POST is default I should be able to take out headers and body.json.
+    //Trying my hand at the delete properties, not sure if I should pass the createdEntry or the "id"
+    deleteEntry: (id) => {
+        return fetch(`${url}/entries/${id}`, {
+            method: "DELETE"
+        }).then(() => API.getJournalEntries()).then((response) => {
 
-//Trying my hand at the delete properties, not sure if I should pass the createdEntry or the "id"
-	deleteEntry: (createdEntry) => {
-		return fetch(`${url}/entries/${createdEntry}`, {
-			method: "DELETE"
-	}).then(() => API.getJournalEntries()).then((response)=>{
-    
-            entriesDOM.renderJournalEntries(response) 
-    })}
-    //Gotta add back all of the entries? Such in the recipes example?
+            entriesDOM.renderJournalEntries(response)
+        })
+    },
+    //Edit operation....Question: Do I want to pass the createdEntry? As well what about ID as a parameter?
+    updateEntry: (id, createdEntry) => {
+        return fetch(`${url}/entries/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(createdEntry)   
+        }).then(() => API.getJournalEntries()).then((response) => {
+
+            entriesDOM.renderJournalEntries(createdEntry)
+        })
+    }
+
 
 }
 
